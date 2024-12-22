@@ -15,47 +15,53 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/channel_up_button"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:text="Channel +"
-        app:layout_constraintBottom_toTopOf="@+id/ok_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ok_button" />
-
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/channel_down_button"
-        android:layout_width="120dp"
-        android:layout_height="50dp"
-        android:text="Channel -"
-        app:layout_constraintBottom_toBottomOf="@+id/ok_button"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ok_button" />
-
-    <com.google.android.material.button.MaterialButton
         android:id="@+id/volume_up_button"
         android:layout_width="120dp"
         android:layout_height="50dp"
+        android:layout_marginStart="16dp"
         android:text="Volume +"
-        app:layout_constraintBottom_toTopOf="@+id/ok_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ok_button" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/volume_down_button"
         android:layout_width="120dp"
         android:layout_height="50dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
         android:text="Volume -"
-        app:layout_constraintBottom_toBottomOf="@+id/ok_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/volume_up_button" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/channel_up_button"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="16dp"
+        android:text="Channel +"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ok_button" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/channel_down_button"
+        android:layout_width="120dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:text="Channel -"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/channel_up_button" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/ok_button"
-        app:cornerRadius="120dp"
         android:layout_width="85dp"
         android:layout_height="95dp"
         android:text="OK"
+        app:cornerRadius="120dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -74,25 +80,25 @@
         android:id="@+id/up_button"
         android:layout_width="120dp"
         android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
         android:text="↑"
         android:textAlignment="center"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/ok_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/down_button"
         android:layout_width="120dp"
         android:layout_height="50dp"
+        android:layout_marginTop="16dp"
         android:text="↓"
         android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.6" />
+        app:layout_constraintTop_toBottomOf="@+id/ok_button" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/left_button"
@@ -120,46 +126,46 @@
         android:id="@+id/play_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginBottom="32dp"
         android:text="⏯︎"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/stop_button"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/down_button" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/stop_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginBottom="32dp"
         android:text="⏹"
         android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/fast_backward_button"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/play_button"
-        app:layout_constraintTop_toBottomOf="@+id/down_button" />
+        app:layout_constraintStart_toEndOf="@+id/play_button" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/fast_backward_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginBottom="32dp"
         android:text="⏪"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/fast_forward_button"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/stop_button"
-        app:layout_constraintTop_toBottomOf="@+id/down_button" />
+        app:layout_constraintStart_toEndOf="@+id/stop_button" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/fast_forward_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
+        android:layout_marginBottom="32dp"
         android:text="⏩"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/fast_backward_button"
-        app:layout_constraintTop_toBottomOf="@+id/down_button" />
+        app:layout_constraintStart_toEndOf="@+id/fast_backward_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

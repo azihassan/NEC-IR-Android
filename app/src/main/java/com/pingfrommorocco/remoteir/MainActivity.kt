@@ -10,10 +10,12 @@ import com.google.android.material.button.MaterialButton
 
 class MainActivity : AppCompatActivity() {
     private val TAG = "RemoteIR"
+    private val VIBRATION_DURATION: Long = 50
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        val vibrator = VibratorWrapper(this)
         val infraredService = getSystemService(CONSUMER_IR_SERVICE) as ConsumerIrManager
         val transformer = NecTransformer()
 
@@ -49,6 +51,7 @@ class MainActivity : AppCompatActivity() {
                 val pulses = transformer.transformMessage(NecCode.ADDRESS.code, command.code)
                 Log.d(TAG, "emitting: ${pulses.map { it }}")
                 infraredService.transmit(38000, pulses.toIntArray())
+                vibrator.vibrate(VIBRATION_DURATION)
             }
         }
 
@@ -57,10 +60,14 @@ class MainActivity : AppCompatActivity() {
             findViewById<MaterialButton>(button).setOnTouchListener { view, motionEvent ->
                 when(motionEvent.action) {
                     MotionEvent.ACTION_DOWN -> {
+                        vibrator.vibrate(VIBRATION_DURATION)
                         val pulses =
                             transformer.transformMessage(NecCode.ADDRESS.code, command.code)
                         Log.d(TAG, "emitting: ${pulses.map { it }}")
                         infraredService.transmit(38000, pulses.toIntArray())
+                    }
+                    MotionEvent.ACTION_UP -> {
+                        vibrator.vibrate(VIBRATION_DURATION)
                     }
                     MotionEvent.ACTION_BUTTON_PRESS -> {
                         view.performClick()
